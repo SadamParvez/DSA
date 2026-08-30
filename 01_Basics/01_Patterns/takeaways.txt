@@ -1,0 +1,60 @@
+1. Every pattern can almost always be broken into two questions:
+        - How many rows? → Outer loop.
+        - What should each row contain? → Inner loop(s).
+        - Example we have 
+            ***
+            **
+            *
+          - Rows = n
+          - Stars in row = n - rowIndex (or simply i in your reverse loop)
+
+
+
+2. One thing to learn For symmetric patterns, think in sections instead of loops.
+For every row:
+[spaces] [left] [right]
+
+
+Then decide the count for each section:
+Spaces = n - i - 1
+Left stars = i + 1
+Right stars = i
+
+
+    *
+   ***
+  *****
+ *******
+*********
+
+Row 0 (i = 0) -    *
+[spaces][left][right]
+    4      1      0
+
+Row 1 (i = 1) -   ***
+[spaces][left][right]
+    3      2      1
+
+Row 2 (i = 2) -  *****
+[spaces][left][right]
+    2      3      2
+
+Row 3 (i = 3) - *******
+[spaces][left][right]
+    1      4      3
+
+Row 4 (i = 4) -*********
+[spaces][left][right]
+    0      5      4
+
+
+The important lesson is don't think "I need 3 loops." Think:
+
+Each row has three parts: spaces, left stars, right stars. How many characters does each part have?
+
+
+This way, even more complex patterns (diamonds, hourglasses, butterflies) become just combinations of sections rather than something to memorize.
+
+
+
+3. 
